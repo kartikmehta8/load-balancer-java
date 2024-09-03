@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+spring:
+  cloud:
+    loadbalancer:
+      instances:
+        service-a:
+          - host: localhost
+            port: 8081
+          - host: localhost
+            port: 8082
+
+  devtools:
+    livereload:
+      enabled: false
